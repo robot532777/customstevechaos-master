@@ -1,0 +1,20 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm'
+}
+
+group 'ru.cristalix'
+version projectVersion
+
+repositories {
+    maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
+    maven { url 'https://ci.ender.zone/plugin/repository/everything/' }
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    implementation 'org.apache.commons:commons-math3:3.6.1'
+    implementation project(':common')
+    implementation project(':core')
+    coreDependencies()
+}

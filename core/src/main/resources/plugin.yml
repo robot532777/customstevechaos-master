@@ -1,0 +1,3 @@
+name: CustomSteveChaosCore
+main: ru.cristalix.csc.CustomSteveChaosCore
+version: $projectVersion

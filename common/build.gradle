@@ -1,0 +1,40 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm'
+    id "com.github.johnrengelman.shadow"
+}
+
+group 'ru.cristalix'
+version projectVersion
+
+repositories {
+    jcenter()
+    mavenCentral()
+    mavenLocal()
+    maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
+    maven { url 'https://papermc.io/repo/repository/maven-public/' }
+    maven { url 'http://repo.citizensnpcs.co/' }
+}
+
+dependencies {
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.20.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-cbor:0.20.0"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:1.4-M1"
+    implementation 'me.stepbystep:MinigameAPI:0.1'
+    implementation 'me.stepbystep:API:1.0'
+    compileOnly 'com.destroystokyo.paper:paper-api:1.12.2-R0.1-SNAPSHOT'
+    compileOnly "ru.cristalix:kasdospigot:1.12.2"
+    compileOnly 'net.citizensnpcs:citizensapi:2.0.26-SNAPSHOT'
+    compileOnly fileTree(dir: 'lib', include: ['*.jar'])
+}
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+        freeCompilerArgs = [
+                "-Xopt-in=kotlin.RequiresOptIn",
+                "-Xopt-in=kotlin.time.ExperimentalTime",
+                "-Xopt-in=kotlin.ExperimentalStdlibApi"
+        ]
+    }
+}
