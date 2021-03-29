@@ -1,0 +1,8 @@
+name: CustomSteveChaos
+main: ru.cristalix.csc.CustomSteveChaos
+version: $projectVersion
+
+depend:
+  - Citizens
+  - HolographicDisplays
+  - ProtocolLib

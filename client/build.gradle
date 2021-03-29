@@ -1,0 +1,21 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm'
+}
+
+group 'ru.cristalix'
+version projectVersion
+
+repositories {
+    maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
+    maven { url "https://gitlab.com/api/v4/projects/10077943/packages/maven" }
+    maven { url 'https://repo.dmulloy2.net/nexus/repository/public/' }
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    implementation 'org.apache.commons:commons-math3:3.6.1'
+    implementation project(':common')
+    compileOnly 'com.gmail.filoghost.holographicdisplays:holographicdisplays-api:2.4.0'
+    compileOnly 'com.comphenix.protocol:ProtocolLib:4.5.1'
+}
